@@ -183,10 +183,8 @@ async function handleMenuInteraction(interaction) {
     }
 
     if (action === "help") {
-      const { buildHelpEmbed } = require("../app/bot");
-      if (typeof buildHelpEmbed === "function") {
-        await sendOrUpdate({ content: "", embeds: [buildHelpEmbed()], components: buildMenuComponents(ownerId) });
-      }
+      const { buildHelpEmbed } = require("../app/messageEmbeds");
+      await sendOrUpdate({ content: "", embeds: [buildHelpEmbed()], components: buildMenuComponents(ownerId) });
       return true;
     }
   } catch (err) {

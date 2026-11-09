@@ -275,7 +275,7 @@ async function handleSetupAvisosCommand(interactionOrMessage) {
       files: files
     });
 
-    const successMsg = `✅ Anúncio oficial publicado com sucesso no canal <#${channel.id}> com menção @everyone!`;
+    const successMsg = `✅ Anúncio oficial publicado com sucesso no canal <#${channel.id}> com menção ||@everyone||!`;
     if (isMessage) await interactionOrMessage.reply(successMsg);
     else await interactionOrMessage.editReply(successMsg);
   } catch (error) {
@@ -579,13 +579,13 @@ async function handleSetupSorteioCommand(interactionOrMessage) {
       .setFooter({ text: "Kabaré • Boa sorte!" });
 
     const sentMsg = await channel.send({
-      content: "@everyone 🎉 **SORTEIO DE DISCORD NITRO!**",
+      content: "||@everyone|| 🎉 **SORTEIO DE DISCORD NITRO!**",
       embeds: [embed]
     });
 
     await sentMsg.react("🎉").catch(() => null);
 
-    const successMsg = `✅ Painel de sorteio do Nitro publicado com sucesso no canal <#${channel.id}> com menção @everyone e reação 🎉!`;
+    const successMsg = `✅ Painel de sorteio do Nitro publicado com sucesso no canal <#${channel.id}> com menção ||@everyone|| e reação 🎉!`;
     if (isMessage) await interactionOrMessage.reply(successMsg);
     else if (typeof interactionOrMessage.editReply === "function") await interactionOrMessage.editReply(successMsg);
     return true;
